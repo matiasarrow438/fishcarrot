@@ -176,6 +176,15 @@ nav li.active a span::after {
     }
 }
 
+/* Mobile menu button and menu - hidden by default */
+.mobile-menu-btn {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
 /* Additional Mobile Navigation Optimization */
 @media (max-width: 480px) {
     nav {
@@ -209,7 +218,7 @@ nav li.active a span::after {
         height: 24px;
     }
 
-    /* Add mobile menu button */
+    /* Show mobile menu button on mobile */
     .mobile-menu-btn {
         display: block;
         background: none;
