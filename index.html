@@ -208,6 +208,35 @@
                     document.getElementById('loading-screen').style.display = 'none';
                 }, 500);
             }, 1500); // Show loading for 1.5 seconds
+
+            // Add gallery caption toggle for mobile
+            if (window.innerWidth <= 768) {
+                const galleryItems = document.querySelectorAll('.gallery-item:not(.coming-soon)');
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        // Remove active class from all other items
+                        galleryItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.gallery-caption').style.transform = 'translateY(100%)';
+                            }
+                        });
+
+                        // Toggle caption for clicked item
+                        const caption = item.querySelector('.gallery-caption');
+                        const isShowing = caption.style.transform === 'translateY(0px)';
+                        caption.style.transform = isShowing ? 'translateY(100%)' : 'translateY(0)';
+                    });
+                });
+
+                // Hide captions when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.gallery-item')) {
+                        galleryItems.forEach(item => {
+                            item.querySelector('.gallery-caption').style.transform = 'translateY(100%)';
+                        });
+                    }
+                });
+            }
         });
 
         // Add smooth scrolling functionality
