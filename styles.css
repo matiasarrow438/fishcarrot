@@ -147,22 +147,105 @@ nav li.active a span::after {
 }
 
 @media (max-width: 768px) {
+    nav {
+        padding: 0.8rem;
+    }
+
     nav ul {
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     
     nav a {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .social-icons {
         gap: 0.8rem;
-        margin-left: 0.5rem;
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
     }
 
     .nav-social-icon svg {
         width: 18px;
         height: 18px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+}
+
+/* Additional Mobile Navigation Optimization */
+@media (max-width: 480px) {
+    nav {
+        padding: 0.8rem;
+    }
+
+    nav ul {
+        gap: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Hide text links on very small screens, keep only icons */
+    nav a span {
+        display: none;
+    }
+
+    nav li:not(.social-icons) {
+        display: none;
+    }
+
+    .social-icons {
+        margin-left: auto;
+        gap: 1rem;
+    }
+
+    .nav-social-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Add mobile menu button */
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    /* Mobile menu styles */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--background-color);
+        padding: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-menu a {
+        display: block;
+        padding: 0.8rem;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .mobile-menu a span {
+        display: inline-block;
     }
 }
 
