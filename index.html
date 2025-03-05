@@ -243,6 +243,33 @@
                     }
                 });
             }
+
+            // Mobile menu functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                mobileMenuBtn.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.mobile-menu') && 
+                    !e.target.closest('.mobile-menu-btn') && 
+                    mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
         });
 
         // Add smooth scrolling functionality
