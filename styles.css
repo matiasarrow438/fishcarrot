@@ -1105,8 +1105,19 @@ footer {
     }
 
     .gallery-caption {
+        transform: translateY(100%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:active .gallery-caption {
         transform: translateY(0);
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.6));
+    }
+
+    /* Add touch-action manipulation to prevent default touch behavior */
+    .gallery-item {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
