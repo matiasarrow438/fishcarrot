@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishCarrot Coin 🐡🥕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-animation">
+            <img src="assets/pufferfish.png" alt="Loading Fish" class="loading-fish">
+            <div class="loading-carrot">🥕</div>
+        </div>
+        <div class="loading-text">Loading...</div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">FishCarrot</div>
+            <ul>
+                <li><a href="#game"><span>Play Game</span></a></li>
+                <li><a href="#gallery"><span>Gallery</span></a></li>
+                <li><a href="#tokenomics"><span>Tokenomics</span></a></li>
+                <li class="social-icons">
+                    <a href="#" class="nav-social-icon twitter" title="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="nav-social-icon telegram" title="Telegram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="nav-social-icon discord" title="Discord">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>FishCarrot Coin</h1>
+            <p class="tagline">The most delicious memecoin in the crypto ocean! 🐡🥕</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn primary" onclick="goToPumpFun(); return false;">Buy Now</a>
+                <a href="#game" class="btn secondary">Play Game</a>
+            </div>
+            <div class="contract-address">
+                <span>Official CA: </span>
+                <div class="ca-container">
+                    <code id="contractAddress">0x123...789</code>
+                    <button class="copy-btn" onclick="copyCA()">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-text">Copy</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="game">
+            <h2>Play Our Mini Game :)</h2>
+            <div id="game-container">
+                <div id="instructions" class="instructions active">
+                    <h3>How to Play</h3>
+                    <ul>
+                        <li>⌨️ Use Arrow Keys or WASD to swim left and right</li>
+                        <li>🥕 Catch the falling carrots to score points</li>
+                        <li>🎯 Time your moves to catch carrots at different heights</li>
+                    </ul>
+                    <button id="startGame" class="btn primary">Start Game</button>
+                </div>
+                <div class="game-area" id="gameArea" style="display: none;">
+                    <div class="pufferfish" id="pufferfish">
+                        <img src="assets/pufferfish.png" alt="Pufferfish">
+                    </div>
+                    <div class="carrot carrot1">🥕</div>
+                    <div class="carrot carrot2">🥕</div>
+                    <div class="carrot carrot3">🥕</div>
+                    <div class="joystick-container">
+                        <button class="joystick-btn" id="leftBtn">←</button>
+                        <button class="joystick-btn" id="rightBtn">→</button>
+                    </div>
+                </div>
+                <div id="score" style="display: none;">Score: <span id="scoreValue">0</span></div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/grass.jpg" alt="Grass landscape" loading="lazy">
+                    <div class="gallery-caption">
+                        <h3>Carrot Fields</h3>
+                        <p>Where our delicious carrots grow wild and free</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ocean.jpg" alt="Ocean view" loading="lazy">
+                    <div class="gallery-caption">
+                        <h3>Deep Blue Home</h3>
+                        <p>Where pufferfish feast on ocean-soaked carrots</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/farm.jpg" alt="Farm scene" loading="lazy">
+                    <div class="gallery-caption">
+                        <h3>Carrot Farm</h3>
+                        <p>Cultivating the finest carrots for our fishy friends</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/carnival.jpg" alt="Carnival atmosphere" loading="lazy">
+                    <div class="gallery-caption">
+                        <h3>Carrot Carnival</h3>
+                        <p>Celebrating the fusion of fish and carrots</p>
+                    </div>
+                </div>
+                <div class="gallery-item coming-soon">
+                    <div class="placeholder">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+                <div class="gallery-item coming-soon">
+                    <div class="placeholder">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tokenomics">
+            <h2>Tokenomics</h2>
+            <div class="token-info">
+                <div class="info-card">
+                    <h3>Total Supply</h3>
+                    <p>1,000,000,000</p>
+                    <span class="highlight">1 Billion $FCAR</span>
+                </div>
+                <div class="info-card">
+                    <h3>Liquidity</h3>
+                    <p>🔒 LOCKED</p>
+                    <span class="highlight">For Maximum Safety</span>
+                </div>
+                <div class="info-card">
+                    <h3>Tax</h3>
+                    <p>0% Buy/Sell</p>
+                    <span class="highlight">Pure PumpFun Token</span>
+                </div>
+            </div>
+            <div class="token-description">
+                <p>Join the most delicious adventure in the crypto ocean! <span class="emphasis">$FCAR</span> is here to make waves with zero tax and locked liquidity. 🌊</p>
+                <p>Catch some gains while our pufferfish chases those juicy carrots! 🐡🥕</p>
+            </div>
+        </section>
+
+        <section id="community">
+            <h2>Join Our Community</h2>
+            <div class="community-grid">
+                <a href="#" class="community-card twitter">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <h3>Twitter</h3>
+                    <p>Follow us for the latest updates</p>
+                    <span class="join-now">Join Now →</span>
+                </a>
+                <a href="#" class="community-card telegram">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>Join our active community</p>
+                    <span class="join-now">Join Now →</span>
+                </a>
+                <a href="#" class="community-card discord">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </div>
+                    <h3>Discord</h3>
+                    <p>Chat with fellow holders</p>
+                    <span class="join-now">Join Now →</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FishCarrot Coin. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 500);
+            }, 1500); // Show loading for 1.5 seconds
+        });
+
+        // Add smooth scrolling functionality
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerOffset = 80; // Height of the fixed header
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const pufferfish = document.getElementById('pufferfish');
+        const gameArea = document.getElementById('gameArea');
+        const instructions = document.getElementById('instructions');
+        const startButton = document.getElementById('startGame');
+        const scoreElement = document.getElementById('scoreValue');
+        const scoreDisplay = document.getElementById('score');
+        
+        let position = 50; // Starting position (%)
+        let score = 0;
+        let gameActive = false;
+        let isMovingLeft = false;
+        let isMovingRight = false;
+        const moveSpeed = 1.5;
+        let lastTime = 0;
+        const targetFPS = 60;
+        const frameTime = 1000 / targetFPS;
+        const carrotFallDuration = 3;
+
+        function updatePosition(timestamp) {
+            if (!lastTime) lastTime = timestamp;
+            const deltaTime = timestamp - lastTime;
+
+            if (deltaTime >= frameTime) {
+                if (gameActive) {
+                    if (isMovingLeft && position > 0) {
+                        position -= moveSpeed;
+                        position = Math.max(0, position);
+                        pufferfish.style.transform = `translateX(-50%) scaleX(1)`;
+                    }
+                    if (isMovingRight && position < 100) {
+                        position += moveSpeed;
+                        position = Math.min(100, position);
+                        pufferfish.style.transform = `translateX(-50%) scaleX(-1)`;
+                    }
+                    pufferfish.style.left = `${position}%`;
+                }
+                lastTime = timestamp;
+            }
+            requestAnimationFrame(updatePosition);
+        }
+
+        // Start game when "Got It!" is clicked
+        startButton.addEventListener('click', () => {
+            instructions.style.display = 'none';
+            gameArea.style.display = 'block';
+            scoreDisplay.style.display = 'block';
+            gameActive = true;
+            startGame();
+            requestAnimationFrame(updatePosition);
+        });
+
+        function moveLeft() {
+            isMovingLeft = true;
+            isMovingRight = false;
+        }
+
+        function moveRight() {
+            isMovingRight = true;
+            isMovingLeft = false;
+        }
+
+        function stopMoving() {
+            isMovingLeft = false;
+            isMovingRight = false;
+        }
+
+        function getRandomPosition() {
+            return Math.random() * 85 + 5;
+        }
+
+        function respawnCarrot(carrot) {
+            carrot.style.left = getRandomPosition() + '%';
+            let startingTop;
+            if (carrot.classList.contains('carrot1')) {
+                startingTop = -50;
+            } else if (carrot.classList.contains('carrot2')) {
+                startingTop = -150;
+            } else {
+                startingTop = -250;
+            }
+            carrot.style.top = startingTop + 'px';
+            carrot.style.animation = 'none';
+            carrot.offsetHeight;
+            carrot.style.animation = `fallDown ${carrotFallDuration}s linear infinite`;
+        }
+
+        function checkCollision(carrot) {
+            if (!gameActive) return false;
+            
+            const fishRect = pufferfish.getBoundingClientRect();
+            const carrotRect = carrot.getBoundingClientRect();
+            
+            const collisionMargin = 20;
+            const adjustedFishRect = {
+                left: fishRect.left + collisionMargin,
+                right: fishRect.right - collisionMargin,
+                top: fishRect.top + collisionMargin,
+                bottom: fishRect.bottom - collisionMargin
+            };
+            
+            const adjustedCarrotRect = {
+                left: carrotRect.left + collisionMargin/2,
+                right: carrotRect.right - collisionMargin/2,
+                top: carrotRect.top + collisionMargin/2,
+                bottom: carrotRect.bottom - collisionMargin/2
+            };
+
+            return !(adjustedFishRect.right < adjustedCarrotRect.left || 
+                    adjustedFishRect.left > adjustedCarrotRect.right || 
+                    adjustedFishRect.bottom < adjustedCarrotRect.top || 
+                    adjustedFishRect.top > adjustedCarrotRect.bottom);
+        }
+
+        function eatCarrot(carrot) {
+            score++;
+            scoreElement.textContent = score;
+            respawnCarrot(carrot);
+        }
+
+        function startGame() {
+            const carrots = document.querySelectorAll('.carrot');
+            carrots.forEach(carrot => {
+                respawnCarrot(carrot);
+                setInterval(() => {
+                    if (checkCollision(carrot)) {
+                        eatCarrot(carrot);
+                    }
+                }, 100);
+            });
+        }
+
+        // Mobile touch controls
+        const leftBtn = document.getElementById('leftBtn');
+        const rightBtn = document.getElementById('rightBtn');
+
+        // Touch event handlers for left button
+        leftBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (!gameActive) return;
+            moveLeft();
+        });
+
+        leftBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (isMovingLeft) stopMoving();
+        });
+
+        // Touch event handlers for right button
+        rightBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            if (!gameActive) return;
+            moveRight();
+        });
+
+        rightBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (isMovingRight) stopMoving();
+        });
+
+        // Prevent default touch behavior to avoid scrolling while playing
+        gameArea.addEventListener('touchmove', (e) => {
+            if (gameActive) e.preventDefault();
+        }, { passive: false });
+
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (!gameActive) return;
+            
+            switch(e.key.toLowerCase()) {
+                case 'arrowleft':
+                case 'a':
+                    moveLeft();
+                    break;
+                case 'arrowright':
+                case 'd':
+                    moveRight();
+                    break;
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            switch(e.key.toLowerCase()) {
+                case 'arrowleft':
+                case 'a':
+                    if (isMovingLeft) stopMoving();
+                    break;
+                case 'arrowright':
+                case 'd':
+                    if (isMovingRight) stopMoving();
+                    break;
+            }
+        });
+
+        function copyCA() {
+            const ca = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(ca).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                const copyText = copyBtn.querySelector('.copy-text');
+                copyText.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        function goToPumpFun() {
+            const ca = document.getElementById('contractAddress').textContent;
+            window.open('https://pump.fun/' + ca.trim(), '_blank');
+        }
+    </script>
+</body>
+</html>
